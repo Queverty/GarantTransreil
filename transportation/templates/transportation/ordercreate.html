@@ -1,0 +1,28 @@
+{% extends 'transportation/index.html' %}
+{% load static %}
+{% load humanize %}
+{% block content %}
+    <div class="container-fluid py-5">
+        <div class="container py-5">
+            <div class="row align-items-center">
+                <div class="col-lg-5">
+                    <img class="img-fluid rounded mb-4 mb-lg-0" src="{% static 'transportation/img/214.PNG' %}" alt="">
+                </div>
+                <div class="col-lg-7">
+                    <div class="text-left mb-4">
+                        <h1>{{ order }}</h1>
+                    </div>
+                    <p>Груз - {{ order.cargo }}</p>
+                    <p>Упаковка - {{ order.packing }}</p>
+                    <p>Вес - {{ order.volume|intcomma }} кг</p>
+                    <p>Тип вагона - {{ order.wagon }}</p>
+                    <p>День месяца - {{ order.day }}</p>
+                    <p>Дистанция - {{ order.dist }} км</p>
+                    <p>Цена - {{ order.price|intcomma }} Руб.</p>
+                    <a href="{% url 'order' slug1=order.first_station.slug slug2=order.second_station.slug slug3=order.cargo.slug slug4=order.packing.slug slug5=order.wagon.slug day=order.day %}"
+                       class="btn btn-primary py-md-2 px-md-4 font-weight-semi-bold mt-2">Оформить заказ</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

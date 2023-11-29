@@ -1,0 +1,22 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+django = "*"
+django-service-objects = "*"
+django-phonenumber-field = "*"
+django-phonenumbers = "*"
+pillow = "*"
+django-dump-load-utf8 = "*"
+geopy = "*"
+yandex-geocoder = "*"
+stripe = "*"
+decouple = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.11"
+python_full_version = "3.11.4"

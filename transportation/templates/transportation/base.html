@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+    <link rel='stylesheet' href="{% static 'transportation/css/index.css' %}" type="text/css">
+</head>
+<body>
+<!--Start nav Bar-->
+<nav>
+    <div class="container nav-container">
+        <a href="#" class="logo">Транс<span>Логистика</span></a>
+        <ul>
+            <li><a href='#'>Главная</a></li>
+{#            <li><a href='{% url 'user:profile'  %}'>Личный кибинет</a></li>#}
+        </ul>
+    </div>
+</nav>
+{% block content %}
+
+{% endblock %}
+        <ul>
+            <li><a href='#'>Главная</a></li>
+            <li><a href='{% url 'user:profile' pk=user.id %}'>Личный кибинет</a></li>
+        </ul>
+</body>
+</html>
